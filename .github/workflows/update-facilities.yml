@@ -1,0 +1,48 @@
+name: Update facilities data
+
+# The facility data used to go stale silently once its source disappeared.
+# Refresh it on a schedule and open a pull request, so a human still reviews
+# the diff but nobody has to remember to run the extractor.
+
+on:
+  schedule:
+    # First day of the month, 04:00 UTC.
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rebuild facilities.csv
+        run: node bin/facilities_extractor.js
+
+      - name: Check the result is still well formed
+        run: node bin/verify_facilities.js
+
+      - name: Open a pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: update-facilities
+          title: 'Update facility data from open sources'
+          commit-message: 'Update facility data from open sources'
+          body: |
+            Automated refresh of `facilities.csv` from OpenStreetMap, Infrabel
+            Open Data and the Blue-bike API.
+
+            See `facilities_coverage.md` in this diff for what each column was
+            sourced from, and how much of it is still carried over from the
+            2023 scrape because no source publishes it any more.
+          add-paths: |
+            facilities.csv
+            facilities_coverage.md
