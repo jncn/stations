@@ -11,13 +11,13 @@ Rows: 734. Matched to OpenStreetMap: 554.
 | `street` | **none left** | 551 | — | — |
 | `zip` | **none left** | 551 | — | — |
 | `city` | **none left** | 550 | — | — |
-| `ticket_vending_machine` | osm | 559 | 501 | 347 |
+| `ticket_vending_machine` | osm | 559 | 501 | 339 |
 | `luggage_lockers` | osm | 557 | 21 | 547 |
-| `free_parking` | osm | 559 | 459 | 281 |
+| `free_parking` | osm | 559 | 459 | 275 |
 | `taxi` | osm | 558 | 61 | 510 |
-| `bicycle_spots` | osm | 562 | 466 | — |
-| `blue-bike` | blue-bike | 562 | 129 | — |
-| `bus` | osm | 562 | 478 | — |
+| `bicycle_spots` | osm | 562 | 467 | — |
+| `blue-bike` | blue-bike | 562 | 132 | — |
+| `bus` | osm | 562 | 479 | — |
 | `tram` | osm | 562 | 37 | — |
 | `metro` | osm | 562 | 14 | — |
 | `wheelchair_available` | **none left** | 557 | 36 | — |
@@ -26,9 +26,9 @@ Rows: 734. Matched to OpenStreetMap: 554.
 | `platform_height_cm` | infrabel | 552 | — | — |
 | `escalator_up` | osm | 557 | 46 | 513 |
 | `escalator_down` | osm | 557 | 41 | 513 |
-| `elevator_platform` | osm | 562 | 61 | — |
+| `elevator_platform` | osm | 562 | 62 | — |
 | `audio_induction_loop` | **none left** | 557 | 136 | — |
-| `sales_open_*` / `sales_close_*` | osm (NMBS ticket offices) | 10 | — | — |
+| `sales_open_*` / `sales_close_*` | osm (NMBS ticket offices) | 11 | — | — |
 
 ## Fields with no remaining source
 
